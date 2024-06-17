@@ -65,7 +65,7 @@ function MainCopy() {
                     text: message,
                 }
             });
-            toast.success(`Thanks you ${contactForm.name} for contacting me. Your request was sent successfully. I'll get bact to you as soon as possible`)
+            toast.success(`Thank you ${contactForm.name} for contacting me. I'll get back to you as soon as possible.`)
             setContactForm({ name: '', email: '', message: '' })
 
         } catch (error) {
