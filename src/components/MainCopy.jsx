@@ -69,7 +69,7 @@ function MainCopy() {
             setContactForm({ name: '', email: '', message: '' })
 
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             toast.error('Failed to send. Please try again')
         }
     }
