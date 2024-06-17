@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    html {
+        @apply scroll-smooth;
+    }
+    body {
+        @apply font-nunito overflow-x-hidden;
+    }
+    .heading {
+        @apply text-black text-4xl;
+    }
+    .para {
+        @apply text-black text-lg;
+    }
+    .active {
+        @apply text-blue-700 border-b-2 border-blue-700;
+    }
+}
