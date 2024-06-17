@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/my-app/static/css/main.ac011de7.css",
+    "main.js": "/my-app/static/js/main.914b73c1.js",
+    "static/js/453.bb177003.chunk.js": "/my-app/static/js/453.bb177003.chunk.js",
+    "static/media/nobgimg.png": "/my-app/static/media/nobgimg.07c793483a1c147cca40.png",
+    "static/media/Viswanadh_Fullstack.pdf": "/my-app/static/media/Viswanadh_Fullstack.484ae8771c576d136068.pdf",
+    "index.html": "/my-app/index.html",
+    "main.ac011de7.css.map": "/my-app/static/css/main.ac011de7.css.map",
+    "main.914b73c1.js.map": "/my-app/static/js/main.914b73c1.js.map",
+    "453.bb177003.chunk.js.map": "/my-app/static/js/453.bb177003.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac011de7.css",
+    "static/js/main.914b73c1.js"
+  ]
+}
