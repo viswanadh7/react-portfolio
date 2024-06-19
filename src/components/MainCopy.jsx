@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import Navbar from './Navbar'
-import img from '../assets/nobgimg.png'
+import img from '../assets/nobgimg-compressed.png'
 import resume from '../assets/Viswanadh_Fullstack.pdf'
 
 import { ToastContainer, toast } from 'react-custom-alert';
