@@ -36,7 +36,7 @@ function MainCopy() {
     function ProjectCard({ url, name, link }) {
         return (
             <>
-                <motion.div initial={{ scale: 1.2 }} whileInView={{ scale: 1 }} style={{ backgroundSize: "cover", backgroundImage: `url(${url})` }} className='h-80 w-full text-center hover:scale-105 duration-300 hover:shadow-lg hover:shadow-black rounded-2xl md:hidden'>
+                <motion.div initial={{ scale: 0.5 }} whileInView={{ scale: 1 }} style={{ backgroundSize: "cover", backgroundImage: `url(${url})` }} className='h-80 w-full text-center hover:scale-105 duration-300 hover:shadow-lg hover:shadow-black rounded-2xl md:hidden'>
                     <div className='bg-gradient-to-t from-black to-transparent hover:bg-gradient-to-t hover:from-black hover:to-transparent h-full pt-52 rounded-2xl'>
                         <h1 className='text-2xl text-white mb-5'>{name}</h1>
                         <a className='border border-white rounded-lg px-5 py-2 text-white hover:px-7 duration-300' href={link}>Live Demo</a>
@@ -77,8 +77,14 @@ function MainCopy() {
         <>
             <Navbar />
             <section id='home' className='min:h-screen md:h-screen grid md:grid-cols-2 items-center justify-items-center p-10 gap-5 md:gap-10 lg:gap-40'>
-                <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} transition={{ duration: 0.5 }} className='md:order-2 mt-10 md:mt-0 lg:flex lg:ml-auto'>
+                {/* <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} transition={{ duration: 0.5 }} className='md:order-2 mt-10 md:mt-0 lg:flex lg:ml-auto'>
                     <img className='h-80 lg:h-96 w-fit border-2 border-black rounded-3xl shadow-xl shadow-gray-400' src={img} alt="" />
+                </motion.div> */}
+                <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} transition={{ duration: 0.5 }} className='md:order-2 mt-10 md:mt-0 lg:flex lg:ml-auto hidden md:block'>
+                    <img className='h-80 lg:h-96 w-fit border-2 border-black rounded-3xl shadow-xl shadow-gray-400' src={img} alt="" />
+                </motion.div>
+                <motion.div initial={{ scale: 0.5 }} animate={{ scale: 1 }} className='mt-10 md:mt-0 md:hidden'>
+                    <img className='h-80 w-fit border-2 border-black rounded-3xl shadow-xl shadow-gray-400' src={img} alt="" />
                 </motion.div>
                 <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} transition={{ duration: 0.5 }} className='md:order-1'>
                     <h1 className='heading'>Viswanadh Mudunuru</h1>
@@ -132,7 +138,7 @@ function MainCopy() {
             <section id='projects' className='min:h-screen p-10'>
                 <h1 className='heading my-5'>Projects</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
-                    <ProjectCard url='https://images.pexels.com/photos/15955380/pexels-photo-15955380/free-photo-of-fancy-restaurant-food-on-table.jpeg?auto=compress&cs=tinysrgb&w=600' name='Retaurant Landing Page' link='https://elaborate-syrniki-a20d03.netlify.app/' />
+                    {/* <ProjectCard url='https://images.pexels.com/photos/15955380/pexels-photo-15955380/free-photo-of-fancy-restaurant-food-on-table.jpeg?auto=compress&cs=tinysrgb&w=600' name='Retaurant Landing Page' link='https://elaborate-syrniki-a20d03.netlify.app/' /> */}
 
                     <ProjectCard url='https://images.pexels.com/photos/3769138/pexels-photo-3769138.jpeg?auto=compress&cs=tinysrgb&w=600' name='Travel Booking Website' link='https://magenta-cassata-546ebd.netlify.app/' />
 
