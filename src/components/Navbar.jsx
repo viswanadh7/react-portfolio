@@ -23,9 +23,10 @@ function Navbar() {
                         <a className='h-16 text-lg content-center hover:text-blue-700 cursor-pointer hover:border-b-2 border-blue-700' href="#projects">Projects</a>
                         <a className='h-16 text-lg content-center hover:text-blue-700 cursor-pointer hover:border-b-2 border-blue-700' href="#contact">Contact</a>
                     </div> */}
-                    <div className='hidden md:grid grid-flow-col gap-14'>
+                    <div className='hidden md:grid grid-flow-col gap-10'>
                         <a className='h-16 text-lg content-center hover:text-blue-700 cursor-pointer hover:border-b-2 border-blue-700' href="#home">Home</a>
                         <a className='h-16 text-lg content-center hover:text-blue-700 cursor-pointer hover:border-b-2 border-blue-700' href="#about">About</a>
+                        <a className='h-16 text-lg content-center hover:text-blue-700 cursor-pointer hover:border-b-2 border-blue-700' href="#experience">Experience</a>
                         <a className='h-16 text-lg content-center hover:text-blue-700 cursor-pointer hover:border-b-2 border-blue-700' href="#projects">Projects</a>
                         <a className='h-16 text-lg content-center hover:text-blue-700 cursor-pointer hover:border-b-2 border-blue-700' href="#contact">Contact</a>
                     </div>
@@ -39,6 +40,7 @@ function Navbar() {
                 <div className='flex flex-col'>
                     <a onClick={() => setsideBar(false)} className='h-20 pl-5 para content-center border-b border-black' href="#home">Home</a>
                     <a onClick={() => setsideBar(false)} className='h-20 pl-5 para content-center border-b border-black' href="#about">About</a>
+                    <a onClick={() => setsideBar(false)} className='h-20 pl-5 para content-center border-b border-black' href="#experience">Experience</a>
                     <a onClick={() => setsideBar(false)} className='h-20 pl-5 para content-center border-b border-black' href="#projects">Projects</a>
                     <a onClick={() => setsideBar(false)} className='h-20 pl-5 para content-center border-b border-black' href="#contact">Contact</a>
                 </div>
