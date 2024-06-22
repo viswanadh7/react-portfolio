@@ -102,7 +102,7 @@ function MainCopy() {
                         <h1 onClick={() => { showEducation(false); showSkills(true) }} className={`heading cursor-pointer ${skill ? 'text-blue-700 border-b-2 border-blue-700' : ''}`}>Skills</h1>
                         <h1 onClick={() => { showEducation(true); showSkills(false) }} className={`heading cursor-pointer ${education ? 'text-blue-700 border-b-2 border-blue-700' : ''}`}>Education</h1>
                     </div>
-                    <motion.ul animate={skill ? 'open' : 'closed'} variants={skillVariants} className='grid grid-cols-3 sm:place-items-center lg:place-items-start gap-x-8 gap-y-16 sm:gap-14 lg:gap-20 mt-10 text-xl font-light'>
+                    <motion.ul animate={skill ? 'open' : 'closed'} variants={skillVariants} className='grid grid-cols-3 sm:place-items-center lg:place-items-start gap-x-3 gap-y-16 sm:gap-14 lg:gap-20 mt-10 text-xl font-light'>
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JavaScript</li>
@@ -131,10 +131,9 @@ function MainCopy() {
                             <span className='sm:hidden'>2016-2017</span>
                         </div>
                     </motion.div>
-
-
                 </div>
             </section>
+            <section id='experience'></section>
             <section id='projects' className='min:h-screen p-10'>
                 <h1 className='heading my-5'>Projects</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
@@ -152,8 +151,8 @@ function MainCopy() {
                     <div className='flex flex-col gap-3'>
                         <h1 className='heading'>Contact Me</h1>
                         <p className='para my-3'>Your communication is important to me, so feel free to get in touch anytime. I'm eager to connect and explore how we can work together. You can reach out to me via email or give me a call.</p>
-                        <a className='text-lg hover:scale-105 origin-left duration-200 w-fit' href="mailto:mudunuruviswanadh@gmail.com"><i className="fa-solid fa-envelope mr-3"></i> mudunuruviswanadh@gmail.com</a>
-                        <a className='text-lg hover:scale-105 origin-left duration-200 w-fit' href="tel:+919966211689"><i className="fa-solid fa-phone mr-4"></i>9966211689</a>
+                        <a className='text-md sm:text-lg hover:scale-105 origin-left duration-200 w-fit' href="mailto:mudunuruviswanadh@gmail.com"><i className="fa-solid fa-envelope mr-3"></i> mudunuruviswanadh@gmail.com</a>
+                        <a className='text-md sm:text-lg hover:scale-105 origin-left duration-200 w-fit' href="tel:+919966211689"><i className="fa-solid fa-phone mr-4"></i>9966211689</a>
                     </div>
                     <div className='mt-10 md:mt-0'>
                         <form onSubmit={(e) => handleSubmit(e)} className='p-5 border border-black rounded-2xl shadow-xl' action="">
