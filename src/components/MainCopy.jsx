@@ -133,7 +133,19 @@ function MainCopy() {
                     </motion.div>
                 </div>
             </section>
-            <section id='experience'></section>
+            <section id='experience' className='p-10'>
+                <h1 className='heading my-5'>Experience</h1>
+                <p className='para font-semibold'>ReactJS Developer</p>
+                <a href='https://www.onlinehoja.com/' target='_blank' rel="noreferrer" className='para font-semibold underline'>Online Hoja <i className="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
+                <p className='para font-semibold'>January 2024 - Present</p>
+                <ul className='para list-disc ml-5 mt-5 flex flex-col gap-5'>
+                    <li>Advanced proficiency in React.js: Developed skills in React.js during a 6-month tenure at Online Hoja, gaining expertise in Axios, Axios interceptors, Tanstack Query, Formik, and advanced routing techniques.</li>
+                    <li>Proficient in Tailwind CSS: Acquired advanced knowledge of Tailwind CSS, effectively utilizing its utility-first approach to streamline UI development and enhance front-end design aesthetics.</li>
+                    <li>Hands-on experience with Git and GitHub: Successfully collaborated on projects using Git version control system and GitHub for code repository management, demonstrating proficiency in branch management, merging, and collaborative workflows.</li>
+                    <li>Project contribution and teamwork: Actively participated in team projects, contributing to the development and deployment phases, showcasing strong teamwork and collaboration skills in an agile environment.</li>
+                    <li>Problem-solving and adaptation: Developed a knack for troubleshooting and adapting solutions to meet project requirements, demonstrating flexibility and a proactive approach in resolving technical challenges.</li>
+                </ul>
+            </section>
             <section id='projects' className='min:h-screen p-10'>
                 <h1 className='heading my-5'>Projects</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
@@ -153,6 +165,15 @@ function MainCopy() {
                         <p className='para my-3'>Your communication is important to me, so feel free to get in touch anytime. I'm eager to connect and explore how we can work together. You can reach out to me via email or give me a call.</p>
                         <a className='text-md sm:text-lg hover:scale-105 origin-left duration-200 w-fit' href="mailto:mudunuruviswanadh@gmail.com"><i className="fa-solid fa-envelope mr-3"></i> mudunuruviswanadh@gmail.com</a>
                         <a className='text-md sm:text-lg hover:scale-105 origin-left duration-200 w-fit' href="tel:+919966211689"><i className="fa-solid fa-phone mr-4"></i>9966211689</a>
+                        <div className='flex justify-between sm:justify-normal sm:gap-10 text-2xl mt-8'>
+                            <a href="https://github.com/viswanadh7"><i className="fa-brands fa-github cursor-pointer hover:scale-125 duration-300"></i></a>
+
+                            <a href="https://www.linkedin.com/in/viswanadh-mudunuru"><i className="fa-brands fa-linkedin cursor-pointer hover:scale-125 duration-300"></i></a>
+
+                            <a href="http://t.me/Viswanadh_M"><i className="fa-brands fa-telegram cursor-pointer hover:scale-125 duration-300"></i></a>
+
+                            <a href="https://www.instagram.com/_.viswanadh._?igsh=MTlxc3hzcjh0Z3l1Zw=="><i className="fa-brands fa-instagram cursor-pointer hover:scale-125 duration-300"></i></a>
+                        </div>
                     </div>
                     <div className='mt-10 md:mt-0'>
                         <form onSubmit={(e) => handleSubmit(e)} className='p-5 border border-black rounded-2xl shadow-xl' action="">
