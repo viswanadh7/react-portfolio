@@ -152,11 +152,14 @@ function MainCopy() {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
                     {/* <ProjectCard url='https://images.pexels.com/photos/15955380/pexels-photo-15955380/free-photo-of-fancy-restaurant-food-on-table.jpeg?auto=compress&cs=tinysrgb&w=600' name='Retaurant Landing Page' link='https://elaborate-syrniki-a20d03.netlify.app/' /> */}
 
+                    <ProjectCard url='https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&w=600' name='MERN Stack Blog' link='https://blog-on.netlify.app/' />
+
+                    <ProjectCard url='https://images.pexels.com/photos/13722887/pexels-photo-13722887.jpeg?auto=compress&cs=tinysrgb&w=600' name='Interior Designer Website' link='https://react-interior.netlify.app/' />
+
                     <ProjectCard url='https://images.pexels.com/photos/3769138/pexels-photo-3769138.jpeg?auto=compress&cs=tinysrgb&w=600' name='Travel Booking Website' link='https://magenta-cassata-546ebd.netlify.app/' />
 
                     <ProjectCard url='https://images.pexels.com/photos/13632832/pexels-photo-13632832.jpeg?auto=compress&cs=tinysrgb&w=600' name='Fashion Website' link='https://prismatic-mermaid-1cf30e.netlify.app/' />
 
-                    <ProjectCard url='https://images.pexels.com/photos/13722887/pexels-photo-13722887.jpeg?auto=compress&cs=tinysrgb&w=600' name='Interior Designer Website' link='https://react-interior.netlify.app/' />
                 </div>
             </section>
             <section id='contact' className='h-fit'>
