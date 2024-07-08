@@ -111,6 +111,7 @@ function MainCopy() {
                         <li>Tailwind CSS</li>
                         <li>ReactJs</li>
                         <li>NodeJs</li>
+                        <li>ExpressJs</li>
                         <li>Python</li>
                         <li>MySQL</li>
                         <li>MongoDB</li>
