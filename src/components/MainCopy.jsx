@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import Navbar from './Navbar'
+import ProjectCard from './ProjectCard'
 import img from '../assets/nobgimg-compressed.png'
 import resume from '../assets/Viswanadh_Fullstack.pdf'
 
@@ -33,24 +34,7 @@ function MainCopy() {
         open: { opacity: 1, x: 0 },
         closed: { opacity: 1, x: '100%' }
     }
-    function ProjectCard({ url, name, link }) {
-        return (
-            <>
-                <motion.div initial={{ scale: 0.5 }} whileInView={{ scale: 1 }} style={{ backgroundSize: "cover", backgroundImage: `url(${url})` }} className='h-80 w-full text-center hover:scale-105 duration-300 hover:shadow-lg hover:shadow-black rounded-2xl md:hidden'>
-                    <div className='bg-gradient-to-t from-black to-transparent hover:bg-gradient-to-t hover:from-black hover:to-transparent h-full pt-52 rounded-2xl'>
-                        <h1 className='text-2xl text-white mb-5'>{name}</h1>
-                        <a className='border border-white rounded-lg px-5 py-2 text-white hover:px-7 duration-300' href={link}>Live Demo</a>
-                    </div>
-                </motion.div>
-                <div style={{ backgroundSize: "cover", backgroundImage: `url(${url})` }} className='h-80 w-full text-center hover:scale-105 duration-300 hover:shadow-lg hover:shadow-black rounded-2xl hidden md:block'>
-                    <div className='bg-gradient-to-t from-black to-transparent hover:bg-gradient-to-t hover:from-black hover:to-transparent h-full pt-52 rounded-2xl'>
-                        <h1 className='text-2xl text-white mb-5'>{name}</h1>
-                        <a className='border border-white rounded-lg px-5 py-2 text-white hover:px-7 duration-300' href={link}>Live Demo</a>
-                    </div>
-                </div>
-            </>
-        )
-    }
+
     async function handleSubmit(e) {
         e.preventDefault()
 
@@ -76,7 +60,7 @@ function MainCopy() {
     return (
         <>
             <Navbar />
-            <section id='home' className='min:h-screen md:h-screen grid md:grid-cols-2 items-center justify-items-center p-10 gap-5 md:gap-10 lg:gap-40'>
+            <section id='home' className='min:h-screen md:h-fit lg:h-screen grid md:grid-cols-2 items-center justify-items-center p-10 gap-5 md:gap-10 lg:gap-40'>
                 {/* <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} transition={{ duration: 0.5 }} className='md:order-2 mt-10 md:mt-0 lg:flex lg:ml-auto'>
                     <img className='h-80 lg:h-96 w-fit border-2 border-black rounded-3xl shadow-xl shadow-gray-400' src={img} alt="" />
                 </motion.div> */}
@@ -89,7 +73,7 @@ function MainCopy() {
                 <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} transition={{ duration: 0.5 }} className='md:order-1'>
                     <h1 className='heading'>Viswanadh Mudunuru</h1>
                     <p className='para my-3'>Welcome to my Fullstack Developer portfolio! I'm Viswanadh, a skilled and creative fullstack developer with a passion for crafting robust, efficient, and user-centric applications. I've contributed to a wide range of projects, from complex applications to innovative solutions.</p>
-                    <button className='border border-black px-3 py-2 shadow-lg rounded-lg font-semibold md:hidden hover:shadow-2xl hover:shadow-black/50 hover:-translate-y-1 duration-300'><a href={resume}>Download CV</a></button>
+                    <button className='border border-black px-3 py-2 shadow-lg rounded-lg font-semibold lg:hidden hover:shadow-2xl hover:shadow-black/50 hover:-translate-y-1 duration-300'><a href={resume}>Download CV</a></button>
                 </motion.div>
             </section>
             <section id='about' className='h-fit grid grid-cols-1 lg:grid-cols-2 gap-20 p-10 md:p-10'>
