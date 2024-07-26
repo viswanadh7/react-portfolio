@@ -139,6 +139,8 @@ function MainCopy() {
 
                     <ProjectCard url='https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&w=600' name='MERN Stack Blog' link='https://blog-on.netlify.app/' />
 
+                    <ProjectCard url='https://media.istockphoto.com/id/1023946126/vector/big-movie-reel-open-clapper-board-popcorn-box-package-ticket-admit-one-three-star-cinema.jpg?s=612x612&w=0&k=20&c=_f9dhpn1WUxbLsxXWuJb0jhmn4dBS2yAEa2TVIkn70E=' name='Movie Search' link='https://firstday-firstshow.netlify.app/' />
+
                     <ProjectCard url='https://images.pexels.com/photos/13722887/pexels-photo-13722887.jpeg?auto=compress&cs=tinysrgb&w=600' name='Interior Designer Website' link='https://react-interior.netlify.app/' />
 
                     <ProjectCard url='https://images.pexels.com/photos/3769138/pexels-photo-3769138.jpeg?auto=compress&cs=tinysrgb&w=600' name='Travel Booking Website' link='https://magenta-cassata-546ebd.netlify.app/' />
