@@ -80,7 +80,8 @@ function MainCopy() {
                 <div className=''>
                     <h1 className='heading'>About</h1>
                     {/* <p className='para mt-5'>Enthusiastic and dedicated fresher with a strong passion and demonstrated skills in fullstack development. Armed with a solid foundation in programming languages such as Python, I excel at transforming complex concepts into functional and efficient software solutions. My proficiency in software architecture and design principles enables me to craft scalable and user-centric applications, driven by a deep understanding of user needs and industry standards.<br />My passion for learning and staying current with the latest advancements in fullstack development fuels my ongoing pursuit of knowledge. As a self-driven individual, I am eager to contribute my technical prowess and imaginative problem-solving abilities to an innovative fullstack development team. I firmly believe that my dedication to excellence and creative problem-solving will position me as a valuable contributor in delivering outstanding software solutions.</p> */}
-                    <p className='para mt-5'>Enthusiastic and dedicated developer with a strong foundation in fullstack development. Proficient in React.js, I have honed my skills in Axios for seamless API interactions, utilized interceptors for efficient request/response handling, and integrated advanced state management using React Query and Formik for robust form solutions. Additionally, I have mastered advanced routing techniques to optimize application navigation and user experience. My expertise extends to Tailwind CSS, where I've achieved proficiency in designing responsive and visually appealing interfaces. I am well-versed in version control using Git and GitHub, contributing effectively to collaborative projects and ensuring code integrity throughout development cycles.<br /><br />My experience at Online Hoja has not only strengthened my technical skills but also enhanced my ability to thrive in dynamic project environments. I am eager to leverage my diverse skill set and passion for innovation to contribute positively to impactful software projects. With a keen eye for detail and a dedication to continuous improvement, I am prepared to tackle new challenges and deliver exceptional results in fullstack development.</p>
+                    {/* <p className='para mt-5'>Enthusiastic and dedicated developer with a strong foundation in fullstack development. Proficient in React.js, I have honed my skills in Axios for seamless API interactions, utilized interceptors for efficient request/response handling, and integrated advanced state management using React Query and Formik for robust form solutions. Additionally, I have mastered advanced routing techniques to optimize application navigation and user experience. My expertise extends to Tailwind CSS, where I've achieved proficiency in designing responsive and visually appealing interfaces. I am well-versed in version control using Git and GitHub, contributing effectively to collaborative projects and ensuring code integrity throughout development cycles.<br /><br />My experience at Online Hoja has not only strengthened my technical skills but also enhanced my ability to thrive in dynamic project environments. I am eager to leverage my diverse skill set and passion for innovation to contribute positively to impactful software projects. With a keen eye for detail and a dedication to continuous improvement, I am prepared to tackle new challenges and deliver exceptional results in fullstack development.</p> */}
+                    <p className='para mt-5'>Enthusiastic and dedicated developer with a strong foundation in full-stack development. Proficient in React.js and TypeScript, I have developed skills in seamless API interactions using Axios, alongside efficient request/response handling. I am experienced in advanced state management techniques for creating robust form solutions and optimizing application navigation to enhance user experience. My expertise also includes designing responsive and visually appealing interfaces using MUI and Tailwind CSS.<br /><br />On the backend, I have worked with Express.js, MongoDB, and MySQL to build scalable applications, ensuring smooth data management and integration. I am well-versed in version control using Git and GitHub, contributing effectively to collaborative projects and maintaining code integrity throughout development cycles.<br/><br/>My experience in various project environments has strengthened my technical skills and my ability to adapt to dynamic challenges. I am eager to leverage my diverse skill set and passion for innovation to contribute positively to impactful software projects. With a keen eye for detail and a commitment to continuous improvement, I am prepared to tackle new challenges and deliver exceptional results in full-stack development.</p>
                 </div>
                 <div className='overflow-x-hidden'>
                     <div className='flex justify-between'>
@@ -91,12 +92,14 @@ function MainCopy() {
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JavaScript</li>
+                        <li>TypeScript</li>
                         <li>Bootstrap</li>
                         <li>Tailwind CSS</li>
+                        <li>Material UI</li>
                         <li>ReactJs</li>
                         <li>NodeJs</li>
                         <li>ExpressJs</li>
-                        <li>Python</li>
+                        {/* <li>Python</li> */}
                         <li>MySQL</li>
                         <li>MongoDB</li>
                     </motion.ul>
@@ -121,16 +124,30 @@ function MainCopy() {
             </section>
             <section id='experience' className='p-10'>
                 <h1 className='heading my-5'>Experience</h1>
-                <p className='para font-semibold'>ReactJS Developer</p>
-                <a href='https://www.onlinehoja.com/' target='_blank' rel="noreferrer" className='para font-semibold underline'>Online Hoja <i className="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
-                <p className='para font-semibold'>January 2024 - Present</p>
-                <ul className='para list-disc ml-5 mt-5 flex flex-col gap-5'>
-                    <li>Advanced proficiency in React.js: Developed skills in React.js at Online Hoja, gaining expertise in Axios, Axios interceptors, Tanstack Query, Formik, and advanced routing techniques.</li>
-                    <li>Proficient in Tailwind CSS: Acquired advanced knowledge of Tailwind CSS, effectively utilizing its utility-first approach to streamline UI development and enhance front-end design aesthetics.</li>
-                    <li>Hands-on experience with Git and GitHub: Successfully collaborated on projects using Git version control system and GitHub for code repository management, demonstrating proficiency in branch management, merging, and collaborative workflows.</li>
-                    <li>Project contribution and teamwork: Actively participated in team projects, contributing to the development and deployment phases, showcasing strong teamwork and collaboration skills in an agile environment.</li>
-                    <li>Problem-solving and adaptation: Developed a knack for troubleshooting and adapting solutions to meet project requirements, demonstrating flexibility and a proactive approach in resolving technical challenges.</li>
-                </ul>
+                <div className='mb-10'>
+                    <p className='para font-semibold'>Full Stack Developer</p>
+                    <a href='https://gyanmatrix.com/' target='_blank' rel="noreferrer" className='para font-semibold underline'>Gyanmatrix <i className="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
+                    <p className='para font-semibold'>August 2024 - Present</p>
+                    <ul className='para list-disc ml-5 mt-5 flex flex-col gap-5'>
+                        <li>Full Stack Development: Lead the development and maintenance of robust applications utilizing TypeScript, React.js, Express.js, and MySQL, focusing on building scalable architectures and implementing best practices for clean, maintainable code.</li>
+                        <li>Collaborative Code Practices: Foster a culture of collaboration through active participation in code reviews, pair programming, and team brainstorming sessions, enhancing code quality and promoting knowledge sharing among team members.</li>
+                        <li>Advanced API Integration: Design and implement complex API integrations, optimizing data retrieval and manipulation processes, which resulted in a 25% increase in API response efficiency and improved overall application performance.</li>
+                        <li>Responsive UI Development: Create and optimize responsive UI components using MUI, ensuring a consistent and user-friendly experience across all devices, while adhering to accessibility standards and design principles.</li>
+                        <li>Performance Monitoring and Optimization: Conduct regular performance assessments and optimization of both front-end and back-end systems, leveraging tools and analytics to identify bottlenecks and enhance application speed and responsiveness.</li>
+                    </ul>
+                </div>
+                <div>
+                    <p className='para font-semibold'>ReactJS Developer</p>
+                    <a href='https://www.onlinehoja.com/' target='_blank' rel="noreferrer" className='para font-semibold underline'>Online Hoja <i className="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
+                    <p className='para font-semibold'>January 2024 - June 2024</p>
+                    <ul className='para list-disc ml-5 mt-5 flex flex-col gap-5'>
+                        <li>Advanced proficiency in React.js: Developed skills in React.js at Online Hoja, gaining expertise in Axios, Axios interceptors, Tanstack Query, Formik, and advanced routing techniques.</li>
+                        <li>Proficient in Tailwind CSS: Acquired advanced knowledge of Tailwind CSS, effectively utilizing its utility-first approach to streamline UI development and enhance front-end design aesthetics.</li>
+                        <li>Hands-on experience with Git and GitHub: Successfully collaborated on projects using Git version control system and GitHub for code repository management, demonstrating proficiency in branch management, merging, and collaborative workflows.</li>
+                        <li>Project contribution and teamwork: Actively participated in team projects, contributing to the development and deployment phases, showcasing strong teamwork and collaboration skills in an agile environment.</li>
+                        <li>Problem-solving and adaptation: Developed a knack for troubleshooting and adapting solutions to meet project requirements, demonstrating flexibility and a proactive approach in resolving technical challenges.</li>
+                    </ul>
+                </div>
             </section>
             <section id='projects' className='min:h-screen p-10'>
                 <h1 className='heading my-5'>Projects</h1>
@@ -164,11 +181,11 @@ function MainCopy() {
 
                             <a href="http://t.me/Viswanadh_M"><i className="fa-brands fa-telegram cursor-pointer hover:scale-125 duration-300"></i></a>
 
-                            <a href="https://www.instagram.com/_.viswanadh._?igsh=MTlxc3hzcjh0Z3l1Zw=="><i className="fa-brands fa-instagram cursor-pointer hover:scale-125 duration-300"></i></a>
+                            <a href="https://www.instagram.com/viswanadh_mudunuru?igsh=MTlxc3hzcjh0Z3l1Zw=="><i className="fa-brands fa-instagram cursor-pointer hover:scale-125 duration-300"></i></a>
                         </div>
                     </div>
                     <div className='mt-10 md:mt-0'>
-                        <form onSubmit={(e) => handleSubmit(e)} className='p-5 border border-black rounded-2xl shadow-xl' action="">
+                        <form onSubmit={(e) => handleSubmit(e)} className='p-5 border border-black rounded-xl shadow-xl' action="">
                             <label className='text-lg mb-3' htmlFor="name">Name</label><br />
                             <input required onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })} value={contactForm.name} className='border border-black rounded-md px-3 py-2 mb-5 w-full' placeholder='Enter your name' type="text" /><br />
 
