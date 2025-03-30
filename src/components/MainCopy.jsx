@@ -5,6 +5,21 @@ import Navbar from './Navbar'
 import ProjectCard from './ProjectCard'
 import img from '../assets/nobgimg-compressed.png'
 import resume from '../assets/Viswanadh_Fullstack.pdf'
+import HTML from '../assets/skill-icons/html.svg'
+import CSS from '../assets/skill-icons/css.svg'
+import BOOTSTRAP from '../assets/skill-icons/bootstrap.svg'
+import TAILWIND from '../assets/skill-icons/tailwindcss.svg'
+import MUI from '../assets/skill-icons/mui.svg'
+import JS from '../assets/skill-icons/javascript.svg'
+import TS from '../assets/skill-icons/typescript.svg'
+import REACT from '../assets/skill-icons/react.svg'
+import NODE from '../assets/skill-icons/nodejs.svg'
+import EXPRESS from '../assets/skill-icons/expressjs.svg'
+import MONGODB from '../assets/skill-icons/mongodb.svg'
+import SQL from '../assets/skill-icons/mysql.svg'
+import GIT from '../assets/skill-icons/git.svg'
+import GITHUB from '../assets/skill-icons/github.svg'
+import POSTMAN from '../assets/skill-icons/postman.svg'
 
 import { ToastContainer, toast } from 'react-custom-alert';
 import 'react-custom-alert/dist/index.css';
@@ -81,28 +96,87 @@ function MainCopy() {
                     <h1 className='heading'>About</h1>
                     {/* <p className='para mt-5'>Enthusiastic and dedicated fresher with a strong passion and demonstrated skills in fullstack development. Armed with a solid foundation in programming languages such as Python, I excel at transforming complex concepts into functional and efficient software solutions. My proficiency in software architecture and design principles enables me to craft scalable and user-centric applications, driven by a deep understanding of user needs and industry standards.<br />My passion for learning and staying current with the latest advancements in fullstack development fuels my ongoing pursuit of knowledge. As a self-driven individual, I am eager to contribute my technical prowess and imaginative problem-solving abilities to an innovative fullstack development team. I firmly believe that my dedication to excellence and creative problem-solving will position me as a valuable contributor in delivering outstanding software solutions.</p> */}
                     {/* <p className='para mt-5'>Enthusiastic and dedicated developer with a strong foundation in fullstack development. Proficient in React.js, I have honed my skills in Axios for seamless API interactions, utilized interceptors for efficient request/response handling, and integrated advanced state management using React Query and Formik for robust form solutions. Additionally, I have mastered advanced routing techniques to optimize application navigation and user experience. My expertise extends to Tailwind CSS, where I've achieved proficiency in designing responsive and visually appealing interfaces. I am well-versed in version control using Git and GitHub, contributing effectively to collaborative projects and ensuring code integrity throughout development cycles.<br /><br />My experience at Online Hoja has not only strengthened my technical skills but also enhanced my ability to thrive in dynamic project environments. I am eager to leverage my diverse skill set and passion for innovation to contribute positively to impactful software projects. With a keen eye for detail and a dedication to continuous improvement, I am prepared to tackle new challenges and deliver exceptional results in fullstack development.</p> */}
-                    <p className='para mt-5'>Enthusiastic and dedicated developer with a strong foundation in full-stack development. Proficient in React.js and TypeScript, I have developed skills in seamless API interactions using Axios, alongside efficient request/response handling. I am experienced in advanced state management techniques for creating robust form solutions and optimizing application navigation to enhance user experience. My expertise also includes designing responsive and visually appealing interfaces using MUI and Tailwind CSS.<br /><br />On the backend, I have worked with Express.js, MongoDB, and MySQL to build scalable applications, ensuring smooth data management and integration. I am well-versed in version control using Git and GitHub, contributing effectively to collaborative projects and maintaining code integrity throughout development cycles.<br/><br/>My experience in various project environments has strengthened my technical skills and my ability to adapt to dynamic challenges. I am eager to leverage my diverse skill set and passion for innovation to contribute positively to impactful software projects. With a keen eye for detail and a commitment to continuous improvement, I am prepared to tackle new challenges and deliver exceptional results in full-stack development.</p>
+                    <p className='para mt-5'>Enthusiastic and dedicated developer with a strong foundation in full-stack development. Proficient in React.js and TypeScript, I have developed skills in seamless API interactions using Axios, alongside efficient request/response handling. I am experienced in advanced state management techniques for creating robust form solutions and optimizing application navigation to enhance user experience. My expertise also includes designing responsive and visually appealing interfaces using MUI and Tailwind CSS.<br /><br />On the backend, I have worked with Express.js, MongoDB, and MySQL to build scalable applications, ensuring smooth data management and integration. I am well-versed in version control using Git and GitHub, contributing effectively to collaborative projects and maintaining code integrity throughout development cycles.<br /><br />My experience in various project environments has strengthened my technical skills and my ability to adapt to dynamic challenges. I am eager to leverage my diverse skill set and passion for innovation to contribute positively to impactful software projects. With a keen eye for detail and a commitment to continuous improvement, I am prepared to tackle new challenges and deliver exceptional results in full-stack development.</p>
                 </div>
                 <div className='overflow-x-hidden'>
                     <div className='flex justify-between'>
                         <h1 onClick={() => { showEducation(false); showSkills(true) }} className={`heading cursor-pointer ${skill ? 'text-blue-700 border-b-2 border-blue-700' : ''}`}>Skills</h1>
                         <h1 onClick={() => { showEducation(true); showSkills(false) }} className={`heading cursor-pointer ${education ? 'text-blue-700 border-b-2 border-blue-700' : ''}`}>Education</h1>
                     </div>
-                    <motion.ul animate={skill ? 'open' : 'closed'} variants={skillVariants} className='grid grid-cols-3 sm:place-items-center lg:place-items-start gap-x-2 gap-y-16 sm:gap-14 lg:gap-20 mt-10 text-xl font-light'>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>Bootstrap</li>
-                        <li>Tailwind CSS</li>
-                        <li>Material UI</li>
-                        <li>ReactJs</li>
-                        <li>NodeJs</li>
-                        <li>ExpressJs</li>
-                        {/* <li>Python</li> */}
-                        <li>MySQL</li>
-                        <li>MongoDB</li>
-                    </motion.ul>
+                    <motion.div animate={skill ? 'open' : 'closed'} variants={skillVariants} className='mt-10'>
+                        <h1 className='text-lg mb-3'>Frontend Technologies</h1>
+                        <div className="flex flex-wrap gap-3 md:gap-5">
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={REACT} alt="ReactJS" />
+                                <p className='font-semibold'>ReactJS</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={TAILWIND} alt="TAILWIND" />
+                                <p className='font-semibold'>Tailwind CSS</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={MUI} alt="MUI" />
+                                <p className='font-semibold'>Material UI</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={BOOTSTRAP} alt="BOOTSTRAP" />
+                                <p className='font-semibold'>Bootstrap</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={HTML} alt="HTML" />
+                                <p className='font-semibold'>HTML</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={CSS} alt="CSS" />
+                                <p className='font-semibold'>CSS</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={JS} alt="JS" />
+                                <p className='font-semibold'>JavaScript</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={TS} alt="TS" />
+                                <p className='font-semibold'>TypeScript</p>
+                            </div>
+                        </div>
+                        <h1 className='text-lg mt-10 mb-3'>Backend Technologies</h1>
+                        <div className="flex flex-wrap gap-5">
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={NODE} alt="NODE" />
+                                <p className='font-semibold'>NodeJS</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={EXPRESS} alt="ExpressJS" />
+                                <p className='font-semibold'>ExpressJS</p>
+                            </div>
+                        </div>
+                        <h1 className='text-lg mt-10 mb-3'>Database Management</h1>
+                        <div className="flex flex-wrap gap-5">
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={MONGODB} alt="MongoDB" />
+                                <p className='font-semibold'>MongoDB</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={SQL} alt="MySQL" />
+                                <p className='font-semibold'>MySQL</p>
+                            </div>
+                        </div>
+                        <h1 className='text-lg mt-10 mb-3'>Other Tools</h1>
+                        <div className="flex flex-wrap gap-5">
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={GIT} alt="GIT" />
+                                <p className='font-semibold'>GIT</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={GITHUB} alt="GitHub" />
+                                <p className='font-semibold'>GitHub</p>
+                            </div>
+                            <div className='flex justify-between items-center gap-4 bg-slate-100 border px-2.5 py-1.5 rounded-md'>
+                                <img className='h-7 w-7' src={POSTMAN} alt="Postman" />
+                                <p className='font-semibold'>Postman</p>
+                            </div>
+                        </div>
+                    </motion.div>
                     <motion.div animate={education ? 'open' : 'closed'} variants={educationVariants} className='para'>
                         <div className='mb-10'>
                             <h1 className='flex'>Bachelor of Technology <span className='ml-auto hidden sm:block'>2019-2023</span></h1>
@@ -115,7 +189,7 @@ function MainCopy() {
                             <span className='sm:hidden'>2017-2019</span>
                         </div>
                         <div className='my-10'>
-                            <h1 className='flex'>10th <span className='ml-auto hidden sm:block'>2016-2017</span></h1>
+                            <h1 className='flex'>Matriculation <span className='ml-auto hidden sm:block'>2016-2017</span></h1>
                             <p className='font-light text-md'>National High School</p>
                             <span className='sm:hidden'>2016-2017</span>
                         </div>
