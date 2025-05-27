@@ -1,62 +1,44 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { motion } from 'framer-motion'
-import Navbar from './Navbar'
-import ProjectCard from './ProjectCard'
+import Navbar from '../components/Navbar'
+import ProjectCard from '../components/ProjectCard'
 import img from '../assets/nobgimg-compressed.png'
 import resume from '../assets/Viswanadh_Fullstack.pdf'
 
-import { ToastContainer, toast } from 'react-custom-alert';
+import { ToastContainer } from 'react-custom-alert';
 import 'react-custom-alert/dist/index.css';
 import dayjs from 'dayjs'
+import { sendTelegramNotification } from '../utils/telegram-bot'
+import { backendSkills, databaseSkills, frontendSkills, otherSkills, projects } from '../utils/data'
+import SkillBox from '../components/SkillBox'
 
-// import { FaReact } from "react-icons/fa";
-// import { FaHtml5 } from "react-icons/fa";
-// import { FaCss3Alt } from "react-icons/fa";
-// import { IoLogoJavascript } from "react-icons/io5";
-// import { FaBootstrap } from "react-icons/fa";
-// import { RiTailwindCssFill } from "react-icons/ri";
-// import { FaNode } from "react-icons/fa";
-// import { SiExpress } from "react-icons/si";
-// import { FaPython } from "react-icons/fa";
-// import { BiLogoMongodb } from "react-icons/bi";
-// import { DiMysql } from "react-icons/di";
 
-function MainCopy() {
-    const [skill, showSkills] = useState(true)
-    const [education, showEducation] = useState(false)
+function Main() {
+    const texts = ["App Developer", "Full stack Developer", "MERN stack Developer"];
+
     const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
+    const [textIndex, setTextIndex] = useState(0);
 
-    const skillVariants = {
-        open: { opacity: 1, x: 0, height: 0 },
-        closed: { opacity: 1, x: '-100%', height: 0 }
-    }
-    const educationVariants = {
-        open: { opacity: 1, x: 0 },
-        closed: { opacity: 1, x: '100%' }
-    }
+    const variants = {
+        hidden: { opacity: 0 },
+        visible: (i) => ({
+            opacity: 1,
+            transition: {
+                delay: i * 0.1,
+                duration: 0.1
+            }
+        }),
+        exit: {
+            opacity: 0,
+            transition: {
+                duration: 0.5
+            }
+        }
+    };
 
     async function handleSubmit(e) {
         e.preventDefault()
-
-        try {
-            const message = `New form submission:\n\n\nName: ${contactForm.name}\n\nEmail: ${contactForm.email}\n\nMessage: ${contactForm.message}`;
-            const telegramBotToken = '7253968320:AAHF63IW9wmYulph3qxf4iutbUBn836UML8';
-            const telegramChatId = '-1002192507379';
-
-            await axios.get(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-                params: {
-                    chat_id: telegramChatId,
-                    text: message,
-                }
-            });
-            toast.success(`Thank you ${contactForm.name} for contacting me. I'll get back to you as soon as possible.`)
-            setContactForm({ name: '', email: '', message: '' })
-
-        } catch (error) {
-            //console.log(error);
-            toast.error('Failed to send. Please try again')
-        }
+        await sendTelegramNotification(contactForm, setContactForm)
     }
     return (
         <>
@@ -73,11 +55,43 @@ function MainCopy() {
                 </motion.div>
                 <motion.div initial={{ x: '-100%' }} animate={{ x: 0 }} transition={{ duration: 0.5 }} className='md:order-1'>
                     <h1 className='heading'>Viswanadh Mudunuru</h1>
+                    <div className="h-12 flex items-center">
+                        <motion.div
+                            key={textIndex}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={variants}
+                            onAnimationComplete={() => {
+                                setTimeout(() => {
+                                    setTextIndex((prev) => (prev + 1) % texts.length);
+                                }, 2000);
+                            }}
+                            className="text-xl"
+                        >
+                            {texts[textIndex].split("").map((char, i) => (
+                                <motion.span
+                                    key={i}
+                                    custom={i}
+                                    variants={variants}
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
+                        </motion.div>
+                        <motion.span
+                            animate={{ opacity: [0, 1, 0] }}
+                            transition={{ repeat: Infinity, duration: 0.8 }}
+                            className="ml-1"
+                        >
+                        </motion.span>
+                    </div>
                     <p className='para my-3'>Welcome to my Fullstack Developer portfolio! I'm Viswanadh, a skilled and creative fullstack developer with a passion for crafting robust, efficient, and user-centric applications. I've contributed to a wide range of projects, from complex applications to innovative solutions.</p>
                     <button className='border border-black px-3 py-2 shadow-lg rounded-lg font-semibold lg:hidden hover:shadow-2xl hover:shadow-black/50 hover:-translate-y-1 duration-300'><a href={resume}>Download CV</a></button>
                 </motion.div>
             </section>
-            <section id='about' className='h-fit grid grid-cols-1 lg:grid-cols-2 gap-20 p-10 md:p-10'>
+
+            <section id='about' className='min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-20 p-10 md:p-10'>
                 <div className=''>
                     <h1 className='heading'>About</h1>
                     {/* <p className='para mt-5'>Enthusiastic and dedicated fresher with a strong passion and demonstrated skills in fullstack development. Armed with a solid foundation in programming languages such as Python, I excel at transforming complex concepts into functional and efficient software solutions. My proficiency in software architecture and design principles enables me to craft scalable and user-centric applications, driven by a deep understanding of user needs and industry standards.<br />My passion for learning and staying current with the latest advancements in fullstack development fuels my ongoing pursuit of knowledge. As a self-driven individual, I am eager to contribute my technical prowess and imaginative problem-solving abilities to an innovative fullstack development team. I firmly believe that my dedication to excellence and creative problem-solving will position me as a valuable contributor in delivering outstanding software solutions.</p> */}
@@ -86,41 +100,29 @@ function MainCopy() {
                 </div>
                 <div className='overflow-x-hidden'>
                     <div className='flex justify-between'>
-                        <h1 onClick={() => { showEducation(false); showSkills(true) }} className={`heading cursor-pointer ${skill ? 'text-blue-700 border-b-2 border-blue-700' : ''}`}>Skills</h1>
-                        <h1 onClick={() => { showEducation(true); showSkills(false) }} className={`heading cursor-pointer ${education ? 'text-blue-700 border-b-2 border-blue-700' : ''}`}>Education</h1>
+                        <h1 className='heading'>Skills</h1>
                     </div>
-                    <motion.ul animate={skill ? 'open' : 'closed'} variants={skillVariants} className='grid grid-cols-3 sm:place-items-center lg:place-items-start gap-x-2 gap-y-16 sm:gap-14 lg:gap-20 mt-10 text-xl font-light'>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>Bootstrap</li>
-                        <li>Tailwind CSS</li>
-                        <li>Material UI</li>
-                        <li>ReactJs</li>
-                        <li>NodeJs</li>
-                        <li>ExpressJs</li>
-                        {/* <li>Python</li> */}
-                        <li>MySQL</li>
-                        <li>MongoDB</li>
-                    </motion.ul>
-                    <motion.div animate={education ? 'open' : 'closed'} variants={educationVariants} className='para'>
-                        <div className='mb-10'>
-                            <h1 className='flex'>Bachelor of Technology <span className='ml-auto hidden sm:block'>2019-2023</span></h1>
-                            <p className='font-light text-md'>Gudlavalleru Engineering College</p>
-                            <span className='sm:hidden'>2019-2023</span>
+                    <div className='mt-10'>
+                        <h1 className='text-lg mb-3'>Frontend Technologies</h1>
+                        <div className="flex flex-wrap gap-3 md:gap-5">
+                            {frontendSkills.map((skill, index) => <SkillBox key={index} name={skill.name} image={skill.image} />)}
                         </div>
-                        <div className='my-10'>
-                            <h1 className='flex'>Secondary Education <span className='ml-auto hidden sm:block'>2017-2019</span></h1>
-                            <p className='font-light text-md'>Sri Chaitanya Jr. College</p>
-                            <span className='sm:hidden'>2017-2019</span>
+                        <h1 className='text-lg mt-10 mb-3'>Backend Technologies</h1>
+                        <div className="flex flex-wrap gap-5">
+                            {backendSkills.map((skill, index) => <SkillBox key={index} name={skill.name} image={skill.image} />)}
+
                         </div>
-                        <div className='my-10'>
-                            <h1 className='flex'>10th <span className='ml-auto hidden sm:block'>2016-2017</span></h1>
-                            <p className='font-light text-md'>National High School</p>
-                            <span className='sm:hidden'>2016-2017</span>
+                        <h1 className='text-lg mt-10 mb-3'>Database Management</h1>
+                        <div className="flex flex-wrap gap-5">
+                            {databaseSkills.map((skill, index) => <SkillBox key={index} name={skill.name} image={skill.image} />)}
+
                         </div>
-                    </motion.div>
+                        <h1 className='text-lg mt-10 mb-3'>Other Tools</h1>
+                        <div className="flex flex-wrap gap-5">
+                            {otherSkills.map((skill, index) => <SkillBox key={index} name={skill.name} image={skill.image} />)}
+
+                        </div>
+                    </div>
                 </div>
             </section>
             <section id='experience' className='p-10'>
@@ -153,18 +155,7 @@ function MainCopy() {
             <section id='projects' className='min:h-screen p-10'>
                 <h1 className='heading my-5'>Projects</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center'>
-                    {/* <ProjectCard url='https://images.pexels.com/photos/15955380/pexels-photo-15955380/free-photo-of-fancy-restaurant-food-on-table.jpeg?auto=compress&cs=tinysrgb&w=600' name='Retaurant Landing Page' link='https://elaborate-syrniki-a20d03.netlify.app/' /> */}
-
-                    <ProjectCard url='https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&w=600' name='MERN Stack Blog' link='https://blog-on.netlify.app/' />
-
-                    <ProjectCard url='https://media.istockphoto.com/id/1023946126/vector/big-movie-reel-open-clapper-board-popcorn-box-package-ticket-admit-one-three-star-cinema.jpg?s=612x612&w=0&k=20&c=_f9dhpn1WUxbLsxXWuJb0jhmn4dBS2yAEa2TVIkn70E=' name='Movie Search' link='https://firstday-firstshow.netlify.app/' />
-
-                    <ProjectCard url='https://images.pexels.com/photos/13722887/pexels-photo-13722887.jpeg?auto=compress&cs=tinysrgb&w=600' name='Interior Designer Website' link='https://react-interior.netlify.app/' />
-
-                    <ProjectCard url='https://images.pexels.com/photos/3769138/pexels-photo-3769138.jpeg?auto=compress&cs=tinysrgb&w=600' name='Travel Booking Website' link='https://magenta-cassata-546ebd.netlify.app/' />
-
-                    <ProjectCard url='https://images.pexels.com/photos/13632832/pexels-photo-13632832.jpeg?auto=compress&cs=tinysrgb&w=600' name='Fashion Website' link='https://prismatic-mermaid-1cf30e.netlify.app/' />
-
+                    {projects.map((project, index) => <ProjectCard key={index} name={project.title} url={project.url} link={project.link} />)}
                 </div>
             </section>
             <section id='contact' className='h-fit'>
@@ -210,5 +201,5 @@ function MainCopy() {
     )
 }
 
-export default MainCopy
+export default Main
 
