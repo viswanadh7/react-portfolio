@@ -7,6 +7,7 @@ import resume from '../assets/Viswanadh_Fullstack.pdf'
 
 import { ToastContainer } from 'react-custom-alert';
 import 'react-custom-alert/dist/index.css';
+import dayjs from 'dayjs'
 import { sendTelegramNotification } from '../utils/telegram-bot'
 import { backendSkills, databaseSkills, frontendSkills, otherSkills, projects } from '../utils/data'
 import SkillBox from '../components/SkillBox'
@@ -192,7 +193,7 @@ function Main() {
                 <hr />
                 <div className='flex justify-between px-10 mt-5 mb-3'>
                     <h1 className='flex items-center gap-2'><i className="fa-regular fa-copyright"></i>Viswanadh Portfolio</h1>
-                    <h1>2024</h1>
+                    <h1>{dayjs().year()}</h1>
                 </div>
             </section>
             <ToastContainer floatingTime={5000} />
