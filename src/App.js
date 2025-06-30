@@ -1,10 +1,10 @@
 // import Main from "./components/Main";
 import { BrowserRouter } from "react-router-dom";
-import MainCopy from "./components/MainCopy";
+import Main from "./pages/Main";
 function App() {
     return (
         <BrowserRouter>
-            <MainCopy />
+            <Main />
         </BrowserRouter>
     );
 }
